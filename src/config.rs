@@ -65,7 +65,7 @@ pub fn get_user_input() -> UserInputConfig {
         io::stdout(),
         "A config file was not detected, so we'll create one"
     );
-    let _ = write!(io::stdout(), "Eu4 Stats username: ");
+    let _ = write!(io::stdout(), "Steam username: ");
     let _ = io::stdout().flush();
     let username: String = text_io::read!("{}\n");
     let _ = write!(io::stdout(), "{}'s API key: ", username);

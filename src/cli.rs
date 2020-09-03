@@ -20,13 +20,21 @@ const HELP: &str = r#"
 Automatically upload saves to rakaly.com when a new file is detected
 
 USAGE:
-    uploader [COMMAND] [OPTIONS]
+    rakaly [COMMAND] [OPTIONS]
+
+COMMANDS:
+    gui                 Start the rakaly desktop GUI
+    run                 Watch a directory without spawning the GUI
+    install-service     Install Rakaly as a windows service on boot
+    run-service         Entrypoint when running Rakaly as a service
+    uninstall-service   Uninstall Rakaly as a windows service
+
+If omitted the default command is gui
 
 OPTIONS:
     -h, --help      Prints help information
         --version   Prints version information
-    -c, --config    File location of an uploader's configuration file.
-                    Defaults to "uploader-config.toml" sibling file to the uploader executable.
+    -c, --config    Custom configuration file location for Rakaly
 "#;
 
 pub fn parse_args() -> anyhow::Result<ParsedArgs> {
